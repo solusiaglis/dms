@@ -41,15 +41,17 @@ class File(models.Model):
 
         headers = {"X-API-KEY": api_key}
 
-        xfile = "https://docs.swissuplabs.com/images/m2/pdf-invoices/\
-                frontend/invoice-stripes.png"
+        # xfile = "https://docs.swissuplabs.com/images/m2/pdf-invoices/\
+        #         frontend/invoice-stripes.png"
 
         for rec in self:
+            xfile_url = rec.get_base_url() + rec._get_share_url(redirect=True)
+
             payload = {
                 "fields": {
                     "invoice": {
                         "file_name": rec.name,
-                        "file_url": xfile,
+                        "file_url": xfile_url,
                     }
                 }
             }
@@ -60,3 +62,13 @@ class File(models.Model):
     def action_receive_ocr(self):
         # print(self)
         return
+
+# aglis
+# workspace_id = '018fa593-6133-7ccb-b23d-a2950fae4ddc'
+# project_id = '018fa805-052d-7200-8083-2300a5b92b84'
+# api_key = 'xzS0xuN.1KlSBw9mwMp78mdG_w2w4XC_XU2gpU6J'
+
+# hg
+# workspace_id = '018fa593-6133-7ccb-b23d-a2950fae4ddc'
+# project_id = '018fa805-052d-7200-8083-2300a5b92b84'
+# api_key = 'xzS0xuN.1KlSBw9mwMp78mdG_w2w4XC_XU2gpU6J'
