@@ -63,12 +63,3 @@ class File(models.Model):
         # print(self)
         return
 
-# aglis
-# workspace_id = '018fa593-6133-7ccb-b23d-a2950fae4ddc'
-# project_id = '018fa805-052d-7200-8083-2300a5b92b84'
-# api_key = 'xzS0xuN.1KlSBw9mwMp78mdG_w2w4XC_XU2gpU6J'
-
-# hg
-# workspace_id = '018fa593-6133-7ccb-b23d-a2950fae4ddc'
-# project_id = '018fa805-052d-7200-8083-2300a5b92b84'
-# api_key = 'xzS0xuN.1KlSBw9mwMp78mdG_w2w4XC_XU2gpU6J'
