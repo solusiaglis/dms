@@ -38,4 +38,48 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_dms_file_tree" model="ir.ui.view">
+        <field name="name">dms_file.tree.ocr</field>
+        <field name="model">dms.file</field>
+        <field name="inherit_id" ref="dms.view_dms_file_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree//field[1]" position="before">
+                <header>
+                    <button
+                        class="oe_highlight"
+                        name="action_send_ocr"
+                        type="object"
+                        string="Send OCR"
+                    />
+                    <button
+                        class="oe_highlight"
+                        name="action_receive_ocr"
+                        type="object"
+                        string="Receive OCR"
+                    />
+                    <button
+                        class="oe_highlight"
+                        name="action_create_journal"
+                        type="object"
+                        string="Journal OCR"
+                    />
+                    <button
+                        class="oe_highlight"
+                        name="action_create_bill"
+                        type="object"
+                        string="Bill OCR"
+                    />
+                    <button
+                        class="oe_highlight"
+                        name="action_create_invoice"
+                        type="object"
+                        string="Invoice OCR"
+                    />
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    view_dms_file_tree
 </odoo>

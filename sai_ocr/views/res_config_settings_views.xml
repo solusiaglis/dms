@@ -27,13 +27,13 @@
                                     Settings for workspace
                                 </div>
                                 <div class="content-group">
-                                    <div class="row mt16">
+                                    <!-- <div class="row mt16">
                                         <label
                                         class="col-md-3 o_light_label"
                                         for="sai_api_url"
                                     />
                                         <field name="sai_api_url" />
-                                    </div>
+                                    </div> -->
                                     <div class="row mt16">
                                         <label
                                         class="col-md-3 o_light_label"
