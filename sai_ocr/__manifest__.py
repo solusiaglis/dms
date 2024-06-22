@@ -16,6 +16,7 @@
     "data": [
         "views/res_config_settings_views.xml",
         "views/dms_file.xml",
+        "views/directory.xml",
     ],
     "images": [
         "static/description/icon.jpg",
