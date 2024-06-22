@@ -1,6 +1,6 @@
 import requests
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class File(models.Model):
@@ -44,21 +44,23 @@ class File(models.Model):
             if not rec.send_response_json:
                 xfile_url = rec.get_base_url() + rec._get_share_url(redirect=True)
 
-                payload = {
-                    "fields": {
-                        "invoice": {
-                            "file_name": rec.name,
-                            "file_url": xfile_url,
+                if xfile_url:
+
+                    payload = {
+                        "fields": {
+                            "invoice": {
+                                "file_name": rec.name,
+                                "file_url": xfile_url,
+                            }
                         }
                     }
-                }
-                response = requests.post(url, json=payload, headers=headers, timeout=30)
+                    response = requests.post(url, json=payload, headers=headers, timeout=30)
 
-                try:
-                    rec.entitiy_id = response.json()["id"]
-                    rec.send_response_json = response.json()
-                except Exception:
-                    pass
+                    try:
+                        rec.entitiy_id = response.json()["id"]
+                        rec.send_response_json = response.json()
+                    except Exception:
+                        pass
 
 
     def action_receive_ocr(self):
